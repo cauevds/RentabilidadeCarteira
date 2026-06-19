@@ -1,0 +1,6 @@
+@RentabilidadeCarteira_HostAddress = http://localhost:5129
+
+GET {{RentabilidadeCarteira_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
