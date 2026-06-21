@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RentabilidadeCarteira.Interfaces;
 using RentabilidadeCarteira.Models.Requests;
+using RentabilidadeCarteira.Models.Responses;
 
 namespace RentabilidadeCarteira.Controllers
 {
@@ -16,6 +17,8 @@ namespace RentabilidadeCarteira.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(CarteiraResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetAll()
         {
             try
@@ -30,6 +33,8 @@ namespace RentabilidadeCarteira.Controllers
         }
 
         [HttpGet("{id:int}")]
+        [ProducesResponseType(typeof(CarteiraResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetById(int id)
         {
             try
@@ -47,6 +52,8 @@ namespace RentabilidadeCarteira.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(CarteiraResponse), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Create([FromBody] CarteiraRequest request)
         {
             try
