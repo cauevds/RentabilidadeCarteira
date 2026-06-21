@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RentabilidadeCarteira.Interfaces;
+using RentabilidadeCarteira.Models.Entities;
 using RentabilidadeCarteira.Models.Requests;
 
 namespace RentabilidadeCarteira.Controllers
@@ -19,6 +20,9 @@ namespace RentabilidadeCarteira.Controllers
         public IActionResult GetAll()
         {
             var benchmarks = _benchmarkService.GetAll();
+            if(benchmarks == null || benchmarks.Count == 0)
+                return NotFound();
+
             return Ok(benchmarks);
         }
 

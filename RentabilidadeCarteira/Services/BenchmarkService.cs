@@ -5,7 +5,7 @@ using RentabilidadeCarteira.Models.Responses;
 
 namespace RentabilidadeCarteira.Services
 {
-    public class BenchmarkService
+    public class BenchmarkService : IBenchmarkService
     {
 
         private readonly IBenchmarkRepository _repository;

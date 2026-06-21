@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
 using RentabilidadeCarteira.Excel;
 using RentabilidadeCarteira.Interfaces;
 using RentabilidadeCarteira.Models.Entities;
@@ -32,7 +33,15 @@ namespace RentabilidadeCarteira.Repositories
 
         public IReadOnlyList<Benchmark> GetAll()
         {
-            throw new NotImplementedException();
+            using var workbook = _excel.Open();
+            var sheet = workbook.Worksheet("Benchmarks");
+
+            return sheet.RowsUsed().Skip(1).Select(row => new Benchmark
+            {
+                Id = row.Cell(1).GetValue<int>(),
+                Nome = row.Cell(2).GetString(),
+                Codigo = row.Cell(3).GetString()
+            }).ToList();
         }
 
         public Benchmark? GetById(int id)

@@ -1,4 +1,7 @@
 using RentabilidadeCarteira.Excel;
+using RentabilidadeCarteira.Interfaces;
+using RentabilidadeCarteira.Repositories;
+using RentabilidadeCarteira.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +10,21 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-builder.Services.AddSingleton<ExcelContext>();
+
+// Excel context
+builder.Services.AddSingleton<IExcelContext, ExcelContext>();
+
+// Repositories
+builder.Services.AddScoped<IBenchmarkRepository, BenchmarkRepository>();
+builder.Services.AddScoped<ICarteiraRepository, CarteiraRepository>();
+builder.Services.AddScoped<IPerformanceCarteiraRepository, PerformanceCarteiraRepository>();
+builder.Services.AddScoped<IPerformanceBenchmarkRepository, PerformanceBenchmarkRepository>();
+
+// Services
+builder.Services.AddScoped<IBenchmarkService, BenchmarkService>();
+builder.Services.AddScoped<ICarteiraService, CarteiraService>();
+builder.Services.AddScoped<IPerformanceService, PerformanceService>();
+builder.Services.AddScoped<IReportService, ReportService>();
 
 var app = builder.Build();
 
