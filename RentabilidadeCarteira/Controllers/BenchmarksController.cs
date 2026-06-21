@@ -32,6 +32,7 @@ namespace RentabilidadeCarteira.Controllers
             return Ok(benchmark);
         }
 
+        [HttpPost]
         public IActionResult Create([FromBody] BenchmarkRequest request)
         {
             if (request == null)
