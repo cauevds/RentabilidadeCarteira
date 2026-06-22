@@ -17,7 +17,8 @@ namespace RentabilidadeCarteira.Controllers
         }
 
         /// <summary>
-        /// Retorna o relatório de performance da carteira.
+        /// Insere uma nova competencia e rentabilidade da carteira. 
+        /// Formato competencia 2026-01 e Rentabilidade ex: 1.20 = 1,20%.
         /// </summary>
         /// <summary>Formato yyyy-MM.</summary>
         /// <summary>Rentabilidade mensal em percentual (ex.: 1.20 = 1,20%).</summary>

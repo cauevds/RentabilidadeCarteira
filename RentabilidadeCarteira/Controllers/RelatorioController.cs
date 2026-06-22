@@ -17,7 +17,8 @@ namespace RentabilidadeCarteira.Controllers
         }
 
         /// <summary>
-        /// Retorna o relatório de performance da carteira.
+        /// Insere uma nova competencia e rentabilidade da carteira. 
+        /// 1=CDI, 2=IBOV, 3=IPCA
         /// </summary>
         /// <summary>Início do período no formato yyyy-MM.</summary>
         /// <summary>Fim do período no formato yyyy-MM.</summary>

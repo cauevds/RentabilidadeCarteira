@@ -14,7 +14,7 @@
         public string PeriodoFim { get; set; } = string.Empty;
 
         /// <summary>1=CDI, 2=IBOV 3=IPCA.</summary>
-        /// <example>1,2,3</example>
+        /// <example>[1,2,3]</example>
         public List<int> BenchmarkIds { get; set; } = new();
     }
 }
