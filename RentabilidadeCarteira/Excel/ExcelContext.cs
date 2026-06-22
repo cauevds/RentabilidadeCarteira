@@ -60,20 +60,32 @@ namespace RentabilidadeCarteira.Excel
             WriteRow(perfCarteira, 2, 1, 1, "2026-01", 1.20);
             WriteRow(perfCarteira, 3, 2, 1, "2026-02", 0.80);
             WriteRow(perfCarteira, 4, 3, 1, "2026-03", 1.50);
+            WriteRow(perfCarteira, 5, 4, 1, "2026-04", 2.20);
+            WriteRow(perfCarteira, 6, 5, 1, "2026-05", 0.90);
+            WriteRow(perfCarteira, 7, 6, 1, "2026-06", 1.70);
 
             var perfBenchmark = workbook.Worksheet("PerformanceBenchmark");
             // CDI
             WriteRow(perfBenchmark, 2, 1, 1, "2026-01", 1.00);
             WriteRow(perfBenchmark, 3, 2, 1, "2026-02", 0.90);
             WriteRow(perfBenchmark, 4, 3, 1, "2026-03", 1.10);
+            WriteRow(perfBenchmark, 5, 4, 1, "2026-04", 1.20);
+            WriteRow(perfBenchmark, 6, 5, 1, "2026-05", 0.90);
+            WriteRow(perfBenchmark, 7, 6, 1, "2026-06", 1.00);
             // IBOV
-            WriteRow(perfBenchmark, 5, 4, 2, "2026-01", 0.50);
-            WriteRow(perfBenchmark, 6, 5, 2, "2026-02", 0.50);
-            WriteRow(perfBenchmark, 7, 6, 2, "2026-03", 0.50);
+            WriteRow(perfBenchmark, 8, 7, 2, "2026-01", 0.50);
+            WriteRow(perfBenchmark, 9, 8, 2, "2026-02", 1.00);
+            WriteRow(perfBenchmark, 10, 9, 2, "2026-03", 0.20);
+            WriteRow(perfBenchmark, 11, 10, 2, "2026-04", 1.30);
+            WriteRow(perfBenchmark, 12, 11, 2, "2026-05", 0.50);
+            WriteRow(perfBenchmark, 13, 12, 2, "2026-06", 0.60);
             // IPCA
-            WriteRow(perfBenchmark, 8, 7, 3, "2026-01", 0.40);
-            WriteRow(perfBenchmark, 9, 8, 3, "2026-02", 0.40);
-            WriteRow(perfBenchmark, 10, 9, 3, "2026-03", 0.40);
+            WriteRow(perfBenchmark, 14, 13, 3, "2026-01", 0.40);
+            WriteRow(perfBenchmark, 15, 14, 3, "2026-02", 1.10);
+            WriteRow(perfBenchmark, 16, 15, 3, "2026-03", 1.00);
+            WriteRow(perfBenchmark, 17, 16, 3, "2026-04", 0.80);
+            WriteRow(perfBenchmark, 18, 17, 3, "2026-05", 1.40);
+            WriteRow(perfBenchmark, 19, 18, 3, "2026-06", 0.40);
         }
 
         private static void WriteRow(IXLWorksheet sheet, int row, params object[] values)
