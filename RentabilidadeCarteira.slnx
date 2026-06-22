@@ -1,3 +1,7 @@
 <Solution>
+  <Folder Name="/Itens de Solução/">
+    <File Path=".dockerignore" />
+    <File Path="Dockerfile" />
+  </Folder>
   <Project Path="RentabilidadeCarteira/RentabilidadeCarteira.csproj" />
 </Solution>
